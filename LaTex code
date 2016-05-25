@@ -1,0 +1,180 @@
+\documentclass{article}
+
+% Packages
+
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, calrsfs, tensor, physics,tikz-cd}
+\usepackage[mathscr]{euscript}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath}
+\setlist[description]{font=\normalfont}
+
+% Custom Commands
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\newcommand*\nrml{\vartriangleleft}
+\newcommand*\scr[1]{\mathscr{#1}}
+\newcommand*\bb[1]{\mathbb{#1}}
+\newcommand*\la{\langle}
+\newcommand*\ra{\rangle}
+\newcommand*\gen[1]{\langle #1 \rangle}
+\newcommand*\x{\times}
+\newcommand*\st{\text{ s.t. }}
+\newcommand*\ord[1]{\left\vert#1\right\vert}
+\newcommand*\aut{\text{Aut}}
+\newcommand*\lcm{\text{lcm}}
+\newcommand*\mcal{\mathcal}
+\newcommand*\es{\emptyset}
+\newcommand*\im{\text{ Im }}
+\newcommand*\N{\mathbb N}
+\newcommand*\Z{\mathbb Z}
+\newcommand*\R{\mathbb R}
+\newcommand*\Q{\mathbb Q}
+\newcommand*\C{\mathbb C}
+\newcommand*\te[1]{\text{#1}}
+\newcommand*\en[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand*\e{\varepsilon}
+\newcommand*\p[1]{\left(#1\right)}
+\newcommand*\ps[1]{\left[#1\right]}
+\newcommand*\pc[1]{\left\{#1\right\}}
+\newcommand*\f[2]{\frac{#1}{#2}}
+\newcommand*\mat[2]{\left(\begin{array}{#1}#2\end{array}\right)}
+\newcommand*\ocross{\otimes}
+\newcommand*\I{\te{i}}
+\newcommand*\pd[3]{\frac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+\newcommand*\td[3]{\frac{d^{#3}#1}{d #2^{#3}}}
+\newcommand*\m{\te{Mat}}
+\newcommand*\End{\te{End}}
+% Miscellaneous
+
+\newtheorem{theorem}{Theorem}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+% Title
+\title{B1-Perturbations stage 2}
+\date{\today}
+
+\begin{document}
+\maketitle
+First, some definitions. It is important that we all use the same
+conventions. We should stick to the $\left(-,+,+,+\right)$ signature,
+which is not what Weinberg does. The less minus signs we use, the
+less we are prone to sign mistakes.
+
+The background metric is
+\[
+ds^{2}=S^{2}\left[-d\eta^{2}+\gamma_{ij}(\eta)dx^{i}dx^{j}\right]\,,
+\]
+where
+\[
+\gamma_{ij}:=\mbox{diag}(e^{2\beta_{1}},e^{2\beta_{2}},e^{2\beta_{3}})\,,\qquad\sum_{i=1}^{3}\beta_{i}=0\,.
+\]
+Note that we are working in a very specific coordinate system in which
+the shear $\sigma_{ij}:=(\gamma_{ij})'/2$ has only two independent
+components. Since $\sigma_{ij}$ is a symmetric traceless matrix,
+the other three componentes can be seen as the three Euler angles
+needed to rotate $\gamma_{ij}$ to a general coordinate system. 
+
+The Lie derivative of the background metric along the vector $\xi$
+is
+\begin{align*}
+{\cal L}_{\xi}\bar{g}_{00} & =-2S^{2}\left(T'+HT\right)\\
+{\cal L}_{\xi}\bar{g}_{0i} & =S^{2}\left(-\partial_{i}T+\gamma_{ij}\partial_{0}\xi^{j}\right)\\
+{\cal L}_{\xi}\bar{g}_{ij} & =S^{2}\left(2{\cal H}T\gamma_{ij}+2T\sigma_{ij}+2\partial_{(i}\xi_{j)}\right)
+\end{align*}
+This is always true, regardless of the splitting. 
+
+We will parameterize $\xi^{\mu}$ as
+\[
+\xi^{\mu}=\left(T,\partial^{1}X,\partial^{2}Y,\partial^{3}Z\right)
+\]
+and the line element as
+\[
+ds^{2}=S^{2}\left[-(1+2A)d\eta^{2}+2B_{i}dx^{i}d\eta+(\gamma_{ij}+h_{ij})dx^{i}dx^{j}\right]\,,
+\]
+where
+\[
+B_{i}=\left(\partial_{1}E,\partial_{2}F,\partial_{3}G\right)
+\]
+and $h_{ij}$ will be built later. Gauge transformations are such
+that
+\[
+\Delta\delta g_{\mu\nu}={\cal L}_{\xi}\bar{g}_{\mu\nu}
+\]
+It is thus straightforward to compute the following transformation
+for $A$ and $B_{i}$: 
+\begin{align*}
+A & \rightarrow A+T'+{\cal H}T=A+(ST)'/S\\
+E & \rightarrow E-T+X'-2\beta_{1}'X=E-T+(\gamma^{11}X)'/\gamma^{11}\\
+F & \rightarrow F-T+Y'-2\beta_{2}'Y=F-T+(\gamma^{22}Y)'/\gamma^{22}\\
+G & \rightarrow G-T+Z'-2\beta_{3}'Z=G-T+(\gamma^{33}Z)'/\gamma^{33}
+\end{align*}
+
+
+In order to parameterize $h_{ij}$, we need ask how many ways there
+exist to build a tensor from scalars only (since we want SSS decomposition).
+There are two ways: either by multiplying a scalar by $\gamma_{ij}$,
+or by taking two derivatives of a scalar. Thus we write
+\[
+h_{ij}=\left(\gamma_{ij}+\frac{\sigma_{ij}}{{\cal H}}\right)2C+\bar{h}_{ij}
+\]
+where $C$ is a scalar and $\bar{h}_{ij}$ is a traceless matrix built
+out of (two) derivatives of 5 new scalar fields. One possibility is
+\[
+\bar{h}_{ij}=\left(\begin{array}{ccc}
+2\partial_{1}^{2}B & \partial_{1}\partial_{2}H & \partial_{1}\partial_{3}I\\
+ & 2\partial_{2}^{2}Q & \partial_{2}\partial_{3}J\\
+ &  & 2\partial_{3}^{2}D
+\end{array}\right)\,,
+\]
+with the constraint
+\[
+\partial_{1}^{2}B+\partial_{2}^{2}Q+\partial_{3}^{2}D=0\,.
+\]
+
+
+The gauge transformations are
+\begin{align*}
+C & \rightarrow C+{\cal H}T\\
+B & \rightarrow B+X\\
+Q & \rightarrow Q+Y\\
+D & \rightarrow D+Z\\
+H & \rightarrow H+X+Y\\
+I & \rightarrow I+X+Z\\
+J & \rightarrow J+Y+Z
+\end{align*}
+
+The following are Gauge invariant combinations:
+\begin{align}
+&A+\f1S\ps{S\p{E-\f{(\gamma^{11} B)'}{\gamma^{11}}}}'\,,\\
+&A+\f1S\ps{S\p{F-\f{(\gamma^{22} Q)'}{\gamma^{22}}}}'\,,\\
+&A+\f1S\ps{S\p{G-\f{(\gamma^{33} D)'}{\gamma^{33}}}}'\,,\\
+&C+\scr H\ps{E-\f{(\gamma^{11}B)'}{\gamma^{11}}}\,,\\
+&C+\scr H\ps{F-\f{(\gamma^{22}Q)'}{\gamma^{22}}}\,,\\
+&C+\scr H\ps{G-\f{(\gamma^{33}D)'}{\gamma^{33}}}\,,\\
+&H-B-Q\,,\\
+&I-B-D\,,\\
+&J-D-Q\,,\\
+&I+J+K-2(B+Q+D)\,,\\
+&H+I-J-2B\,,\\
+&H+J-I-2Q\,,\\
+&I+J-H-2D\,,
+\end{align}
+and so on...
+\\\\
+In analogy to The Theory of Cosmological Perturbations in an Anisotropic Universe, we pick the 7 GIV's:
+\begin{align}
+\Phi&=A+\f1S\ps{S\p{E-\f{(\gamma^{11} B)'}{\gamma^{11}}}}'\,,\\
+\Psi&=C+\scr H\ps{E-\f{(\gamma^{11}B)'}{\gamma^{11}}}\,
+\\\Phi_2&=F+\f{C}{\scr H}-\f{(\gamma^{22}Q)'}{\gamma^{22}}\,,\\
+\Phi_3&=G+\f{C}{\scr H}-\f{(\gamma^{33}D)'}{\gamma^{33}}\,,\\
+\Xi_1&=H-B-Q\,,\\
+\Xi_2&=I-B-D\,,\\
+\Xi_3&=J-D-Q\,.
+\end{align}
+\end{document}
