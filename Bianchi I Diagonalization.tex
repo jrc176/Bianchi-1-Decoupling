@@ -217,4 +217,21 @@ We should check the following: there exists a choice of gauge such that $C=I=J=K
 \zeta_2&=Q\,,\\
 \zeta_3&=D\,.
 \end{align}
+It would be nice, however, if we could set the temporal and mixed components to zero.
+\\\\
+In general, we have the following Christoffel symbols.
+\begin{align}
+\delta\Gamma^0_{00}&=A'\,,\\
+\delta\Gamma^0_{i0}&=\partial_i\ps{A+\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}E_i}\,,\\
+\delta\Gamma^i_{00}&=\partial^i\ps{\f1S\p{SE_i}'-A}\,,\\
+\delta\Gamma^0_{ij}&=\f{\p{S^2 h_{ij}}'-2A\p{S^2\gamma_{ij}}'}{2S^2}-\partial_i\partial_j\ps{\f{E_i+E_j}{2}}\,,\\
+\delta\Gamma^i_{j0}&=\f12\ps{h_{ij}\f{\gamma_{jj}}{\gamma_{ii}}\p{\f{1}{\gamma_{jj}}}'+h_{ij}'\p{\f{1}{\gamma_{ii}}}}+\partial_i\partial_j\ps{\f{E_i-E_j}{2}}\,,\\
+\delta\Gamma^i_{jk}&=\f{1}{2\gamma_{ii}}\p{\partial_k h_{ij}+\partial_j h_{ik}-\partial_i h_{jk}}-\f{(S^2\gamma_{jk})'}{2S^2\gamma_{ii}}\partial_i E_i
+\end{align}
+In the above gauge:
+\begin{align}
+\delta\Gamma^0_{ij}&=\delta_{ij}\f{\p{S^2 h_{ii}}'-2A\p{S^2\gamma_{ii}}'}{2S^2}-\partial_i\partial_j\ps{\f{E_i+E_j}{2}}\,,\\
+\delta\Gamma^i_{j0}&=\f12\delta_{ij}\p{\f{h_{jj}}{\gamma_{jj}}}'+\partial_i\partial_j\ps{\f{E_i-E_j}{2}}\,,\\
+\delta\Gamma^i_{jk}&=\f{1}{2\gamma_{ii}}\ps{\p{\delta_{ij}\partial_k+\delta_{ik}\partial_j}h_{ii}-\delta_{jk}\partial_i\p{h_{jj}+\ps{S^2\gamma_{jj}}'E_i}}\,.
+\end{align}
 \end{document}
