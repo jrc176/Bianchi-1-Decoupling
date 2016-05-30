@@ -207,7 +207,7 @@ Maybe we want to choose the off diagonal components of $\bar h_{ij}$ to be 0. In
 \zeta_2&=Q-\f12(H-I+J)\,,\\
 \zeta_3&=D-\f12(-H+I+J)\,.
 \end{align}
-We should check the following: there exists a choice of gauge such that $C=I=J=H=0$. Then our 7 variables (which only constitute 6 degrees of freedom via the constraint $\partial_{1}^{2}B+\partial_{2}^{2}Q+\partial_{3}^{2}D=0$) are
+We should check the following: there exists a choice of gauge such that $C=H=I=J=0$. Then our 7 variables (which only constitute 6 degrees of freedom via the constraint $\partial_{1}^{2}B+\partial_{2}^{2}Q+\partial_{3}^{2}D=0$) are
 \begin{align}
 \varphi&=A\,,\\
 \xi_1&=E\,,\\
@@ -225,19 +225,19 @@ In general, we have the following Christoffel symbols.
 \delta\Gamma^0_{i0}&=\partial_i\ps{A+\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}E_i}\,,\\
 \delta\Gamma^i_{00}&=\partial^i\ps{\f1S\p{SE_i}'-A}\,,\\
 \delta\Gamma^0_{ij}&=\f{\p{S^2 h_{ij}}'-2A\p{S^2\gamma_{ij}}'}{2S^2}-\partial_i\partial_j\ps{\f{E_i+E_j}{2}}\,,\\
-\delta\Gamma^i_{j0}&=\f12\ps{h_{ij}\f{\gamma_{jj}}{\gamma_{ii}}\p{\f{1}{\gamma_{jj}}}'+h_{ij}'\p{\f{1}{\gamma_{ii}}}}+\partial_i\partial_j\ps{\f{E_i-E_j}{2}}\,,\\
+\delta\Gamma^i_{j0}&=\f12\ps{h_{ij}\f{\gamma_{jj}}{\gamma_{ii}}\p{\f{1}{\gamma_{jj}}}'+h_{ij}'\p{\f{1}{\gamma_{ii}}}}+\partial^i\partial_j\ps{\f{E_i-E_j}{2}}\,,\\
 \delta\Gamma^i_{jk}&=\f{1}{2\gamma_{ii}}\p{\partial_k h_{ij}+\partial_j h_{ik}-\partial_i h_{jk}}-\f{(S^2\gamma_{jk})'}{2S^2\gamma_{ii}}\partial_i E_i
 \end{align}
 In the above gauge:
 \begin{align}
 \delta\Gamma^0_{ij}&=\delta_{ij}\f{\p{S^2 h_{ii}}'-2A\p{S^2\gamma_{ii}}'}{2S^2}-\partial_i\partial_j\ps{\f{E_i+E_j}{2}}\,,\\
-\delta\Gamma^i_{j0}&=\f12\delta_{ij}\p{\f{h_{jj}}{\gamma_{jj}}}'+\partial_i\partial_j\ps{\f{E_i-E_j}{2}}\,,\\
+\delta\Gamma^i_{j0}&=\f12\delta_{ij}\p{\f{h_{jj}}{\gamma_{jj}}}'+\partial^i\partial_j\ps{\f{E_i-E_j}{2}}\,,\\
 \delta\Gamma^i_{jk}&=\f{1}{2\gamma_{ii}}\ps{\p{\delta_{ij}\partial_k+\delta_{ik}\partial_j}h_{ii}-\delta_{jk}\partial_i\p{h_{jj}+\f{\ps{S^2\gamma_{jj}}'}{S^2}E_i}}\,.
 \end{align}
 Please double check this. I'm a little suspicious of the $5\scr H$ term.
 \begin{align}
 \delta R_{00}&=\sum_i\ps{\partial^i(\partial_i+\scr H)\p{A-\f{(SE_i)'}{S}}+\p{\f{h_{ii}}{\gamma_{ii}}}'\f{\sigma_{ii}}{\gamma_{ii}}}\,,\\
-\delta R_{i0}&=-\ps{\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_iE_i}'-\f12\partial_i\p{\f{h_{ii}}{\gamma_{ii}}}'+\f12\partial_i\sum_k\partial_k\partial_k\p{E_k-E_i}-\p{4\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_i A\\&-\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{5\scr H}\partial_iE_i+\f{(S\partial_iE_i)'}{S\gamma_{ii}}\,,
+\delta R_{i0}&=-\ps{\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_iE_i}'-\f12\partial_i\p{\f{h_{ii}}{\gamma_{ii}}}'+\f12\partial_i\sum_k\partial^k\partial_k\p{E_k-E_i}-\p{4\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_i A\\&-\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{5\scr H}\partial_iE_i+\f{(S\partial_iE_i)'}{S\gamma_{ii}}\,,
 \end{align}
 A brief glance at the form of $\delta R_{ij}$ reveals that it too contains every GIV. Note, however, that $A,E,F,G$ only show up as first derivatives in $\eta$. This seems to mean that the dynamic variables are $B,Q,D$.
 \end{document}
