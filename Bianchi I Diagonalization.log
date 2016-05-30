@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 MAY 2016 01:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  30 MAY 2016 09:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1678,7 +1678,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--223
 Here is how much of TeX's memory you used:
  20928 strings out of 493117
  432342 string characters out of 6135433
- 452366 words of memory out of 5000000
+ 452367 words of memory out of 5000000
  24044 multiletter control sequences out of 15000+600000
  13870 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1698,7 +1698,7 @@ lic/rsfs/rsfs10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-s
 uper/sfrm1000.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-sup
 er/sfrm1200.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super
 /sfrm1728.pfb>
-Output written on "Bianchi I Diagonalization.pdf" (4 pages, 135610 bytes).
+Output written on "Bianchi I Diagonalization.pdf" (4 pages, 135381 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream
