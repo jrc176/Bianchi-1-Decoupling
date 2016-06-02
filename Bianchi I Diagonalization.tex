@@ -219,7 +219,7 @@ We should check the following: there exists a choice of gauge such that $C=H=I=J
 \end{align}
 It would be nice, however, if we could set the temporal and mixed components to zero.
 \\\\
-In general, we have the following Christoffel symbols.
+In general, we have the following Christoffel symbols, where $E_i$ is $E,F,G$ for $i=1,2,3$ respectively.
 \begin{align}
 \delta\Gamma^0_{00}&=A'\,,\\
 \delta\Gamma^0_{i0}&=\partial_i\ps{A+\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}E_i}\,,\\
@@ -238,7 +238,30 @@ Please double check this. I'm a little suspicious of the $5\scr H$ term.
 \begin{align}
 \delta R_{00}&=\sum_i\ps{\partial^i(\partial_i+\scr H)\p{A-\f{(SE_i)'}{S}}+\p{\f{h_{ii}}{\gamma_{ii}}}'\f{\sigma_{ii}}{\gamma_{ii}}}\,,\\
 \notag\delta R_{i0}&=-\ps{\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_iE_i}'-\f12\partial_i\p{\f{h_{ii}}{\gamma_{ii}}}'+\f12\partial_i\sum_k\partial^k\partial_k\p{E_k-E_i}-\p{4\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_i A\\&-\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{5\scr H}\partial_iE_i+\f{(S\partial_iE_i)'}{S\gamma_{ii}}\,,\\
-\notag\delta R_{ij}&=\delta_{ij}\ps{\p{\f{\p{S^2h_{ii}}'}{2S^2}}'+2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{-\f32 A'-2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\gamma_{ii}A+h_{ii}'+\p{\scr H-\f{\sigma_{ii}}{\gamma_{ii}}}h_{ii}-\f12\sum_k\partial_k\partial_k E_k}\right.\\&\left.-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'A-2\scr H\p{\f{h_{ii}}{\gamma_{ii}}}'-\sum_k\partial_k\partial_k h_{ii}}+\partial_i\partial_j\ps{A+E_i+E_j+\f1{2\gamma_{ii}}\p{h_{ii}-2\sigma_{ii}E_j}+\f1{2\gamma_{jj}}\p{h_{jj}-2\sigma_{jj}E_i}}
+\notag\delta R_{ij}&=\delta_{ij}\ps{\p{\f{\p{S^2h_{ii}}'}{2S^2}}'+2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{-\f32 A'-2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\gamma_{ii}A+h_{ii}'+\p{\scr H-\f{\sigma_{ii}}{\gamma_{ii}}}h_{ii}-\f{\gamma_{ii}}2\sum_k\partial^k\partial_k E_k}\right.\\&\left.-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'A-2\scr H\p{\f{h_{ii}}{\gamma_{ii}}}'-\sum_k\partial^k\partial_k h_{ii}}+\partial_i\partial_j\ps{A+\scr H(E_i+E_j)+\f1{2\gamma_{ii}}\p{h_{ii}-2\sigma_{ii}E_j}+\f1{2\gamma_{jj}}\p{h_{jj}-2\sigma_{jj}E_i}}
 \end{align}
 A brief glance at the form of $\delta R_{ij}$ reveals that it too contains every GIV. Note, however, that $A,E,F,G$ only show up as first derivatives in $\eta$. This seems to mean that the dynamic variables are $B,Q,D$.
+\\\\
+I am unaware of any theorems regarding the coupling of modes in one gauge implying the coupling in another, or whether the elimination of the non-dynamic variables may eliminate the coupling. This in mind, we consider another gauge more closely related to the Newtonian gauge.
+\\\\
+It is straight forward to write down the equations for the dynamic variables. (Undoubtably, I've made a few mistakes typing these out, but the shouldn't be too far off).
+\begin{align}
+\delta S_{ii}&=\delta R_{ii}\,,\\
+\notag&=\ps{\p{\f{\p{S^2h_{ii}}'}{2S^2}}'+2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{-\f32 A'-2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\gamma_{ii}A+h_{ii}'+\p{\scr H-\f{\sigma_{ii}}{\gamma_{ii}}}h_{ii}-\f{\gamma_{ii}}2\sum_k\partial^k\partial_k E_k}\right.\\&\left.-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'A-2\scr H\p{\f{h_{ii}}{\gamma_{ii}}}'-\sum_k\partial^k\partial_k h_{ii}}+\partial_i\partial_i\ps{A+2\scr HE_i+\f1{\gamma_{ii}}\p{h_{ii}-2\sigma_{ii}E_i}}\,,\\
+\notag&=\p{\scr H'h_{ii}+\scr Hh_{ii}'+\f12h_{ii}''}+2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{-\f32 A'-2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\gamma_{ii}A+h_{ii}'+\p{\scr H-\f{\sigma_{ii}}{\gamma_{ii}}}h_{ii}-\f{\gamma_{ii}}2\sum_k\partial^k\partial_k E_k}\\&-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'A-2\scr H\p{\f{h_{ii}}{\gamma_{ii}}}'-\p{\nabla^2+\partial^i\partial_i} h_{ii}+\partial_i\partial_i\ps{A+2\scr HE_i-2\f{\sigma_{ii}}{\gamma^{ii}}E_i}\,,\\
+\notag&=\p{\scr H'h_{ii}+\scr Hh_{ii}'+\f12h_{ii}''}\\\notag&-3\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}} A'-4\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}^2\gamma_{ii}A+2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}h_{ii}'+2\p{\scr H^2-\p{\f{\sigma_{ii}}{\gamma_{ii}}}^2}h_{ii}-\p{\scr H\gamma_{ii}+\sigma_{ii}}\sum_k\partial^k\partial_k E_k\\&-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'A-2\scr H\p{\f{h_{ii}}{\gamma_{ii}}}'-\p{\nabla^2+\partial^i\partial_i} h_{ii}+\partial_i\partial_i\ps{A+2\scr HE_i-2\f{\sigma_{ii}}{\gamma^{ii}}E_i}\,,\\
+\notag&=\p{\scr H'+4\scr H\f{\sigma_{ii}}{\gamma_{ii}^2}-\nabla^2-\partial^i\partial_i+2\scr H^2-2\p{\f{\sigma_{ii}}{\gamma_{ii}}}^2}h_{ii}+\p{3\scr H+2\f{\sigma_{ii}}{\gamma_{ii}}-\f{2}{\gamma_{ii}}\scr H}h_{ii}'+\f12h_{ii}''
+\\\notag&-3\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}} A'+\p{-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'-4\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}^2\gamma_{ii}+\partial_i\partial_i}A\\&-\p{\scr H\gamma_{ii}+\sigma_{ii}}\sum_k\partial^k\partial_k E_k-2(\scr H\gamma_{ii}-\sigma_{ii})\partial^i\partial_iE_i\,.
+\end{align}
+%\\\\
+%Observe, the following are gauge invariant.
+%\begin{align}
+%\Phi&=A+\p{\f{C}{\scr H}}'-C
+%\Phi^1&=\f{\p{\gamma^{11}B}'}{\gamma^{11}}-E-\p{\f{C}{\scr H}}'\,,\\
+%\Phi^2&=\f{\p{\gamma^{22}Q}'}{\gamma^{22}}-F-\p{\f{C}{\scr H}}'\,,\\
+%\Phi^3&=\f{\p{\gamma^{33}D}'}{\gamma^{33}}-G-\p{\f{C}{\scr H}}'\,,\\
+%\Xi^1&=\,,\\
+%\Xi^2&=\,,\\
+%\Xi^3&=\,,
+%\end{align}
 \end{document}
