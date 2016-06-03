@@ -244,7 +244,7 @@ A brief glance at the form of $\delta R_{ij}$ reveals that it too contains every
 \\\\
 I am unaware of any theorems regarding the coupling of modes in one gauge implying the coupling in another, or whether the elimination of the non-dynamic variables may eliminate the coupling. This in mind, we consider another gauge more closely related to the Newtonian gauge.
 \\\\
-It is straight forward to write down the equations for the dynamic variables. (Undoubtably, I've made a few mistakes typing these out, but the shouldn't be too far off).
+It is straight forward to write down the components corresponding to the equations for the dynamic variables. (Undoubtably, I've made a few mistakes typing these out, but the shouldn't be too far off).
 \begin{align}
 \delta S_{ii}&=\delta R_{ii}\,,\\
 \notag&=\ps{\p{\f{\p{S^2h_{ii}}'}{2S^2}}'+2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\p{-\f32 A'-2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\gamma_{ii}A+h_{ii}'+\p{\scr H-\f{\sigma_{ii}}{\gamma_{ii}}}h_{ii}-\f{\gamma_{ii}}2\sum_k\partial^k\partial_k E_k}\right.\\&\left.-2\p{\scr H\gamma_{ii}+\sigma_{ii}}'A-2\scr H\p{\f{h_{ii}}{\gamma_{ii}}}'-\sum_k\partial^k\partial_k h_{ii}}+\partial_i\partial_i\ps{A+2\scr HE_i+\f1{\gamma_{ii}}\p{h_{ii}-2\sigma_{ii}E_i}}\,,\\
@@ -269,15 +269,28 @@ The units don't work out in some terms. I'm going to redo this calculuation.
 Corrected Christoffel symbols in this gauge are:
 \begin{align}
 \delta\Gamma^0_{00}&=A'\,,\\
-\delta\Gamma^0_{i0}&=\partial_i A+\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}\partial_i E_i\,,\\
+\delta\Gamma^0_{i0}&=\partial_i A+\scr H_i\partial_i E_i\,,\\
 \delta\Gamma^i_{00}&=\scr H\partial^i E_i+\partial^i E_i'+\partial^i A\,,\\
-\delta\Gamma^0_{ij}&=-2A(\scr H\gamma_{ij}+\sigma_{ij})-\f12\partial_i\partial_j(E_i+E_j)+\f{(S^2 h_{ij})'}{2S^2}\,,\\
+\delta\Gamma^0_{ij}&=-2A\gamma_{ij}\scr H_i-\f12\partial_i\partial_j(E_i+E_j)+\f{(S^2 h_{ij})'}{2S^2}\,,\\
 \delta\Gamma^i_{j0}&=\f12\delta^i_j\p{\f{h_{ii}}{\gamma_{ii}}}'+\f12\partial^i\partial_j(E_i-E_j)\,,\\
-\delta\Gamma^i_{jk}&=\f1{2\gamma_{ii}}\p{\partial_j h_{ik}+\partial_k h_{ij}}-\partial^i\p{\f12h_{jk}+\p{\scr H\gamma_{jk}+\sigma_{jk}}E_i}\,.
+\delta\Gamma^i_{jk}&=\f1{2\gamma_{ii}}\p{\partial_j h_{ik}+\partial_k h_{ij}}-\partial^i\p{\f12h_{jk}+\gamma_{jk}\scr H_jE_i}\,.
 \end{align}
-These yield, with possible mistakes, (but the units seem to work out)
+These yield, (with possible mistakes, but the units seem to work out) taking $\scr H_i:=\scr H+\f{\sigma_{ii}}{\gamma_{ii}}$,
 \begin{align}
 \delta R_{00}&=\sum_i\ps{\scr H\partial^i\partial_iE_i+\partial^i\partial_iE_i'+\p{\f{\sigma_{ii}}{\gamma_{ii}}}\p{\f{h_{ii}}{\gamma_{ii}}}'}-\nabla^2 A-3\scr H A'\,,\\
-\notag\delta R_{i0}&=\ps{2\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}^2-\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}'-4\scr H\p{\scr H+\f{\sigma_{ii}}{\gamma_{ii}}}}\partial_i E_i-\f12\partial_i\sum_k\ps{\partial^k\partial_k(E_k-E_i)+\f{\sigma_{kk}}{\gamma_{kk}^2}(h_{kk}-h_{ii})}\\&\hspace{1cm}-\p{2\scr H-\f{\sigma_{ii}}{\gamma_{ii}}}\partial_i A-\f12\partial^ih_{ii}'\,,
+\notag\delta R_{i0}&=\ps{2\scr H_i\p{\scr H_i-2\scr H}-\scr H_i'}\partial_i E_i-\f12\partial_i\sum_k\ps{\partial^k\partial_k(E_k-E_i)+\f{\sigma_{kk}}{\gamma_{kk}^2}(h_{kk}-\delta_{ik}h_{ii})}-\p{3\scr H-\scr H_i}\partial_i A-\f12\partial^ih_{ii}'\,,\\
+\notag\delta R_{ij}&=\ps{\f{(S^2h_{ij})'}{2S^2}}'+\p{\scr H_i+\scr H_j-4\scr H}\ps{\f{(S^2h_{ij})'}{2S^2}}-\f12\partial_i\partial_j\ps{\f{h_{ii}}{\gamma_{ii}}+\f{h_{jj}}{\gamma_{jj}}}+\f12\nabla^2h_{ij}+\gamma_{ij}\scr H_j\p{\f{h_{jj}}{\gamma_{jj}}}'\\\notag&-\f12\partial_i\partial_j\ps{E_i'+E_j'+\p{2\scr H_j-4\scr H}E_i+\p{2\scr H_i-4\scr H}E_j}+\gamma_{ij}\scr H_i\sum_k\partial^k\partial_kE_k\\&+2\ps{(4\scr H-2\scr H_i)\gamma_{ij}\scr H_i-(\gamma_{ij}\scr H_i)'}A+\partial_i\partial_j A-3\gamma_{ij}\scr H_i A'\,.
+\end{align}
+Hence, defining ${\cal H}_i:=2\scr H_i-4\scr H$
+\begin{align}
+\delta R_{ii}&=\ps{\f{(S^2h_{ii})'}{2S^2}}'+{\cal H}_i\ps{\f{(S^2h_{ii})'}{2S^2}}-\partial^i\partial_ih_{ii}+\f12\nabla^2h_{ii}+\gamma_{ii}\scr H_i\p{\f{h_{ii}}{\gamma_{ii}}}'\\&-\partial_i\partial_i\ps{E_i'+{\cal H}_iE_i}+\gamma_{ii}\scr H_i\sum_k\partial^k\partial_kE_k-2\ps{{\cal H}_i\gamma_{ii}\scr H_i+(\gamma_{ii}\scr H_i)'}A+\partial_i\partial_i A-3\gamma_{ii}\scr H_i A'\,,\\
+\end{align}
+Rewriting $\delta R_{ij}$ with ${\cal H}_i$, we see that
+\begin{align}
+\notag\delta R_{ij}&=\ps{\f{(S^2h_{ij})'}{2S^2}}'+{\cal H}_i\ps{\f{(S^2h_{ij})'}{2S^2}}-\f12\partial_i\partial_j\ps{\f{h_{ii}}{\gamma_{ii}}+\f{h_{jj}}{\gamma_{jj}}}+\f12\nabla^2h_{ij}+\gamma_{ij}\scr H_j\p{\f{h_{jj}}{\gamma_{jj}}}'\\&-\f12\partial_i\partial_j\ps{E_i'+E_j'+{\cal H}_jE_i+{\cal H}_iE_j}+\gamma_{ij}\scr H_i\sum_k\partial^k\partial_kE_k-2\ps{{\cal H}_i\gamma_{ij}\scr H_i+(\gamma_{ij}\scr H_i)'}A+\partial_i\partial_j A-3\gamma_{ij}\scr H_i A'\,.
+\end{align}
+Hence for $i\neq j$, we have
+\begin{align}
+\notag\delta R_{ij}&=\f12\partial_i\partial_j \ps{2A-\f{h_{ii}}{\gamma_{ii}}-\f{h_{jj}}{\gamma_{jj}}-E_i'-E_j'-{\cal H}_jE_i-{\cal H}_iE_j}\,.
 \end{align}
 \end{document}
