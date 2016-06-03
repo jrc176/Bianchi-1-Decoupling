@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 JUN 2016 04:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 JUN 2016 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1705,7 +1705,7 @@ Overfull \hbox (11.30592pt too wide) in paragraph at lines 283--283
  []
 
 [5]
-Overfull \hbox (5.93309pt too wide) in paragraph at lines 291--291
+Overfull \hbox (7.3625pt too wide) in paragraph at lines 293--293
 [] 
  []
 
@@ -1713,7 +1713,7 @@ Overfull \hbox (5.93309pt too wide) in paragraph at lines 291--291
 Here is how much of TeX's memory you used:
  20928 strings out of 493117
  432342 string characters out of 6135433
- 458366 words of memory out of 5000000
+ 458367 words of memory out of 5000000
  24044 multiletter control sequences out of 15000+600000
  13870 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1734,7 +1734,7 @@ fs/rsfs10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/s
 frm1000.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfr
 m1200.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1
 728.pfb>
-Output written on "Bianchi I Diagonalization.pdf" (6 pages, 154932 bytes).
+Output written on "Bianchi I Diagonalization.pdf" (6 pages, 155125 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
