@@ -1,0 +1,124 @@
+\documentclass{article}
+
+% Packages
+
+\usepackage{fullpage}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, calrsfs, tensor, physics,tikz-cd}
+\usepackage[mathscr]{euscript}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{enumitem}
+\setlist[description]{font=\normalfont}
+
+% Custom Commands
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\newcommand*\nrml{\vartriangleleft}
+\newcommand*\scr[1]{\mathscr{#1}}
+\newcommand*\bb[1]{\mathbb{#1}}
+\newcommand*\la{\langle}
+\newcommand*\ra{\rangle}
+\newcommand*\gen[1]{\langle #1 \rangle}
+\newcommand*\x{\times}
+\newcommand*\st{\text{ s.t. }}
+\newcommand*\ord[1]{\left\vert#1\right\vert}
+\newcommand*\aut{\text{Aut}}
+\newcommand*\lcm{\text{lcm}}
+\newcommand*\mcal{\mathcal}
+\newcommand*\es{\emptyset}
+\newcommand*\im{\text{ Im }}
+\newcommand*\N{\mathbb N}
+\newcommand*\Z{\mathbb Z}
+\newcommand*\R{\mathbb R}
+\newcommand*\Q{\mathbb Q}
+\newcommand*\C{\mathbb C}
+\newcommand*\te[1]{\text{#1}}
+\newcommand*\en[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand*\e{\varepsilon}
+\newcommand*\p[1]{\left(#1\right)}
+\newcommand*\ps[1]{\left[#1\right]}
+\newcommand*\pc[1]{\left\{#1\right\}}
+\newcommand*\f[2]{\frac{#1}{#2}}
+\newcommand*\mat[2]{\left(\begin{array}{#1}#2\end{array}\right)}
+\newcommand*\ocross{\otimes}
+\newcommand*\I{\te{i}}
+\newcommand*\pd[3]{\frac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+\newcommand*\td[3]{\frac{d^{#3}#1}{d #2^{#3}}}
+\newcommand*\m{\te{Mat}}
+\newcommand*\End{\te{End}}
+\newcommand*\irr{\te{Irr}}
+\newcommand*\sgn{\te{sgn}}
+\newcommand*\pn[2]{\left\|#1\right\|_{#2}}
+\newcommand*\esssup{\te{ess sup}}
+\newcommand*\essinf{\te{ess inf}}
+
+% Miscellaneous
+
+\newtheorem{theorem}{Theorem}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+% Title
+\title{Current Progress}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+We have the following Fourier transform
+\begin{align}
+\phi(\vec x,t)&=\int\f{\diff^3 k}{(2\pi)^3}\Phi(\vec k,\omega)e^{\i(\vec k\cdot\vec x-\omega t)}\,.
+\end{align}
+The wave equation
+\begin{align}
+\alpha^2\nabla^2\phi=\partial_t^2\phi\,,
+\end{align}
+imposes the dispersion relation $\alpha k=\omega$ from which we obtain the solution
+\begin{align}
+\phi(\vec x,t)&=\int\f{\diff^3 k}{(2\pi)^3}\Phi(\vec k)e^{\I(\vec k\cdot\vec x-\alpha k t)}\,.
+\end{align}
+We can now impose the constraint (where $K$ is the bulk modulus)
+\begin{align}
+-p(\vec x,0)&=K\nabla^2\phi(\vec x,0)\,,
+\end{align}
+which, in Fourier space, reads as
+\begin{align}
+P(\vec k)&=K k^2\Phi(\vec k)\,.
+\end{align}
+From this, we obtain the displacement field's Fourier coefficients
+\begin{align}
+U(\vec k)=\I\f{P(\vec k)}{K}\f{\vec k}{k^2}\,,
+\end{align}
+and hence
+\begin{align}
+u(\vec x,t)=\int\f{\diff^3 k}{(2\pi)^3}\I\f{P(\vec k)}{K}\f{\vec k}{k^2}e^{\I(\vec k\cdot\vec x-\alpha k t)}\,.
+\end{align}
+From this, we can obtain the total energy
+\begin{align}
+E&=\f12\int_V\diff^3 x\p{\rho\abs{\partial_t u}^2+(\lambda+2\mu)\abs{\nabla\cdot u}^2}\,,\\
+&=\f{(\lambda+2\mu)}{K^2}\int\f{\diff^3 k}{(2\pi)^3}\abs{P(\vec k)}^2\,,\\
+&=\f{(\lambda+2\mu)}{K^2}\int\f{\diff k}{(2\pi)^3}4\pi k^2\abs{P(k)}^2\,,\\
+&=4\pi\f{(\lambda+2\mu)}{K^2}\int\f{\diff \tilde\lambda}{\tilde\lambda^4}\abs{P(k)}^2\,.
+\end{align}
+We now treat an overpressure of $p_0$ confined to a cylinder of radius $r_x$ and height $h$.
+\begin{align}
+P(\vec k)&=\f{4\pi r_x p_0}{k^2\cos\theta\sin\theta} J_1(k\sin\theta r_x)\sin\p{\f{h k\cos\theta}{2}}\,,\\
+&\sim_{k\to0}\f{2\pi r_x p_0}{k^2\cos\theta\sin\theta} k\sin\theta r_x \sin\p{\f{h k\cos\theta}{2}}\,,\\
+&=\f{2\pi r_x^2 p_0}{k\cos\theta}  \sin\p{\f{h k\cos\theta}{2}}\,.
+\end{align}
+Hence
+\begin{align}
+E_{\te{large }\lambda_0}&=\f{(\lambda+2\mu)}{K^2}\int_{0}^{k_0}\int_{0}^{\pi}\int_{0}^{2\pi}\f{\diff^3 k}{(2\pi)^3}\abs{\f{2\pi r_x^2 p_0}{k\cos\theta}  \sin\p{\f{h k\cos\theta}{2}}}^2\,,\\
+&=(r_x^2 p_0)^2\f{(\lambda+2\mu)}{K^2}\int_{0}^{k_0}\int_{0}^{\pi}\diff k\diff\theta \sin\theta\ps{\f{1}{\cos\theta}  \sin\p{\f{h k\cos\theta}{2}}}^2\,,\\
+&=\ps{(r_x^2 p_0)^2\f{(\lambda+2\mu)}{K^2}}\ps{\f{hk_0\cos(hk_0)+\sin(hk_0)+hk_0(-2+hk_0\te{Si}(hk_0))}{2h}}\,,\\
+&=\ps{(r_x^2 p_0)^2\f{(\lambda+2\mu)}{K^2}}\ps{\f{\pi }{\lambda_0}\cos(\f{2\pi h}{\lambda_0})+\f{1}{2h}\sin(\f{2\pi h}{\lambda_0})+\f{\pi }{\lambda_0}\p{-2+\f{2\pi h}{\lambda_0}\te{Si}\p{\f{2\pi h}{\lambda_0}}}}\,,\\
+&\approx_{h\gg\lambda_0\gg1}\ps{(\sigma_x p_0)^2\f{(\lambda+2\mu)}{K^2}}\ps{\f{\pi h}{\lambda_0^2}}
+\end{align}
+The real question lies in the factor of $(\sigma_xp_0)$ which I believe is proportional to, if not equal to $\td{E}{x}{}$. This result, however, has the feature that it only has one power of $h$, which means that it goes as the energy (if things work as I think they do). Whence, the fraction of energy deposited in the low frequency spectrum is
+\begin{align}
+\Xi=\pi\abs{\td{E}{x}{}}\f{\lambda+2\mu}{K^2\lambda_0^2}\,,
+\end{align}
+where we have taken $E_{\te{total}}=\sigma_x h p_0$ and $\abs{\td{E}{x}{}}=\sigma_x p_0$.
+\\\\
+Our questions are: does this make sense, i.e. can $\Xi$ be greater than 1? It seems as though $\Xi$ is almost proportional to the energy deposition squared. If so, where did we go wrong? If not, how should we proceed? We had a discussion with Professor Taylor the other day, and he was very concerned that we are considering only the linear regime. Clearly a shockwave will form, but will the shockwave to be relegated to the high frequency spectrum?  Moreover, Prof. Taylor brought up the importance of the geometry of the projectile. A pointed tip will push matter to the side, while a blunt tip will force matter along its trajectory. Does this matter for such high velocities? I suppose this would correspond to the fraction of energy deposited in the shear versus compressional modes.
+\end{document}
